@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Selected, manually transcribed code EXCERPT from user-provided Censys HTTP response; not raw full page. -->
+<title>Human Check | vesta-io</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
+<script>
+const TURNSTILE_SITE_KEY = "0x4AAAAAAF7t6vVMfNGnd27A";
+async function verifyTurnstile(token) {
+    const errorDiv = document.getElementById('turnstileError');
+    errorDiv.style.display = 'none';
+    try {
+        const response = await fetch('/verify-turnstile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ turnstile_token: token })
+        });
+        const data = await response.json();
+        if (data.success) {
+            window.location.href = '/';
+        } else {
+            errorDiv.style.display = 'block';
+            turnstile.reset();
+        }
+    } catch (error) {
+        console.error('Verification error:', error);
+        errorDiv.style.display = 'block';
+        errorDiv.textContent = 'Verification failed. Please try again.';
+        turnstile.reset();
+    }
+}
+</script>

@@ -1,0 +1,26 @@
+// CONCEPTUAL HUNT — not executed in a Microsoft Entra/Sentinel tenant.
+// Schema checked against Microsoft SigninLogs documentation, November 2026.
+// Hunt for new device-code sign-ins, prioritizing novel IPs/apps and device posture.
+// Customize authorized app exceptions, time windows, and alert thresholds locally.
+let baseline = SigninLogs
+| where TimeGenerated between (ago(30d) .. ago(1d))
+| where ResultType == "0"
+| summarize KnownIPs = make_set(IPAddress, 500), KnownAppIds = make_set(AppId, 500)
+    by UserPrincipalName;
+SigninLogs
+| where TimeGenerated >= ago(1d)
+| where AuthenticationProtocol =~ "deviceCode"
+| extend DeviceId = tostring(DeviceDetail.deviceId),
+         DeviceManaged = tostring(DeviceDetail.isManaged),
+         DeviceCompliant = tostring(DeviceDetail.isCompliant)
+| join kind=leftouter baseline on UserPrincipalName
+| extend IPNotInHistory = isnull(KnownIPs) or not(set_has_element(KnownIPs, IPAddress)),
+         AppNotInHistory = isnull(KnownAppIds) or not(set_has_element(KnownAppIds, AppId)),
+         ExplicitlyUnmanaged = DeviceManaged =~ "false" or DeviceCompliant =~ "false"
+| extend Successful = (ResultType == "0")
+| where Successful and (IPNotInHistory or AppNotInHistory or ExplicitlyUnmanaged)
+| project TimeGenerated, UserPrincipalName, AppDisplayName, AppId, IPAddress,
+          Location, DeviceId, DeviceManaged, DeviceCompliant,
+          IPNotInHistory, AppNotInHistory, ExplicitlyUnmanaged,
+          ConditionalAccessStatus, OriginalTransferMethod, CorrelationId
+| order by TimeGenerated desc

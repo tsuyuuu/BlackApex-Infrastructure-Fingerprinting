@@ -1,0 +1,32 @@
+{
+  "A_and_B": 71,
+  "A_or_B": 128,
+  "A_sitemap_recovered": 100,
+  "B_robots_recovered": 99,
+  "C_js_recovered": 100,
+  "C_only": 42,
+  "C_only_exact_function_snippet": 23,
+  "C_only_not_function_snippet": 19,
+  "dataset_scope": "recovered Censys result IPs, 11-12 Nov 2026",
+  "indicator_tiers": {
+    "Both static hashes (with or without JS)": 71,
+    "JS search only": 42,
+    "One static hash only": 25,
+    "One static hash plus JS search": 32
+  },
+  "interpretation": "These are search-result overlap and selected-case structural checks, NOT precision, sensitivity, specificity, false-positive rate, or device-code compromise proof.",
+  "manual_dissimilar_comparisons": 1,
+  "manual_workflow_matches": 5,
+  "manually_reviewed_cases": 6,
+  "published_ioc_A": 27,
+  "published_ioc_A_or_B": 31,
+  "published_ioc_A_or_B_or_C": 31,
+  "published_ioc_union": 31,
+  "published_reference_matches_by_tier": {
+    "Both static hashes (with or without JS)": 22,
+    "One static hash only": 7,
+    "One static hash plus JS search": 2
+  },
+  "reference_ioc_list_size": 66,
+  "union": 170
+}

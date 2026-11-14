@@ -1,0 +1,126 @@
+[
+  {
+    "file": "192_166_82_111_https443_root.html",
+    "uri": "https://192.166.82.111/",
+    "source": "Pasted text(1).txt",
+    "declared_censys_hash": "af682346e1c06941187ed7f3811d61e01cbc9d48d28771f4f94f410136002f2d",
+    "local_sha256": "2ece4f5b004f9b7ae33dfab8537b86f136a969e94d4b641205238b2c070ac46a",
+    "hash_matches": false,
+    "approx_bytes": 65537,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "192_166_82_111_https443_sitemap.xml",
+    "uri": "https://192.166.82.111/sitemap.xml",
+    "source": "Pasted text(1).txt",
+    "declared_censys_hash": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+    "local_sha256": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+    "hash_matches": true,
+    "approx_bytes": 273,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "192_166_82_111_port5000_root.html",
+    "uri": "http://192.166.82.111:5000/",
+    "source": "Pasted text(1).txt",
+    "declared_censys_hash": "af682346e1c06941187ed7f3811d61e01cbc9d48d28771f4f94f410136002f2d",
+    "local_sha256": "2ece4f5b004f9b7ae33dfab8537b86f136a969e94d4b641205238b2c070ac46a",
+    "hash_matches": false,
+    "approx_bytes": 65537,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "192_166_82_111_port5000_robots.txt",
+    "uri": "http://192.166.82.111:5000/robots.txt",
+    "source": "Pasted text(1).txt",
+    "declared_censys_hash": "831a8dec4cd5c41ec5f7cb61e9add4e547d564f207f75c053aee19f6f0cf6135",
+    "local_sha256": "831a8dec4cd5c41ec5f7cb61e9add4e547d564f207f75c053aee19f6f0cf6135",
+    "hash_matches": true,
+    "approx_bytes": 232,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "192_166_82_111_port5000_sitemap.xml",
+    "uri": "http://192.166.82.111:5000/sitemap.xml",
+    "source": "Pasted text(1).txt",
+    "declared_censys_hash": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+    "local_sha256": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+    "hash_matches": true,
+    "approx_bytes": 273,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "18_198_139_163_http80_root.html",
+    "uri": "http://18.198.139.163/",
+    "source": "Pasted text(4).txt",
+    "declared_censys_hash": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+    "local_sha256": "33e61e737409b429cba4b7ae1d4352578a5fa1499b117cff68189951df96f62c",
+    "hash_matches": false,
+    "approx_bytes": 112,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "18_198_139_163_https443_root.html",
+    "uri": "https://18.198.139.163/",
+    "source": "Pasted text(4).txt",
+    "declared_censys_hash": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+    "local_sha256": "33e61e737409b429cba4b7ae1d4352578a5fa1499b117cff68189951df96f62c",
+    "hash_matches": false,
+    "approx_bytes": 112,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "18_198_139_163_https443_moneyflex_login.html",
+    "uri": "https://18.198.139.163/web/mfm/login",
+    "source": "Pasted text(4).txt",
+    "declared_censys_hash": "2ae54cb649b57b7f31ce8d6d1d9354d4d182462d6bea81ea9cafa3d3bcf6f65b",
+    "local_sha256": "b60d1d83fc727caaa4830ed73391df2506682fd9d0d36b6ac0e2b77ae1597251",
+    "hash_matches": false,
+    "approx_bytes": 21681,
+    "source_kind": "transcribed_archive"
+  },
+  {
+    "file": "140_150_232_108_reconstructed_sitemap.xml",
+    "uri": "http://140.150.232.108:5000/sitemap.xml",
+    "source": "derived_from_reference_using_exact_one_domain_substitution; compared to independently supplied Censys Nov11 2026 hash",
+    "source_kind": "derived_hash_verified_reconstruction",
+    "declared_censys_hash": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+    "local_sha256": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+    "hash_matches": true,
+    "approx_bytes": 260
+  },
+  {
+    "file": "140_150_232_108_reconstructed_robots.txt",
+    "uri": "http://140.150.232.108:5000/robots.txt",
+    "source": "derived_from_reference_using_exact_one_domain_substitution; compared to independently supplied Censys Nov11 2026 hash",
+    "source_kind": "derived_hash_verified_reconstruction",
+    "declared_censys_hash": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+    "local_sha256": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+    "hash_matches": true,
+    "approx_bytes": 219
+  },
+  {
+    "file": "143_110_222_169_port5000_vesta_excerpt.html",
+    "uri": "http://143.110.222.169:5000/",
+    "source": "Censys HTTP response body pasted by user in conversation; key workflow manually transcribed, unrelated HTML omitted",
+    "source_kind": "manually_transcribed_code_excerpt",
+    "declared_censys_hash": null,
+    "original_complete_body_hash_metadata_only": "a8b87c692dba36b04c7e5723301cd4ecac8d7fab195bfbab9642767a93cc10de",
+    "observed_time": "Nov 12 2026 02:49 UTC",
+    "local_sha256": "a80deb90d6fa97ae0371ca462dd3b8cbd81a233c5d4794a4e4016a83dff61bec",
+    "hash_matches": false,
+    "approx_bytes": 1178
+  },
+  {
+    "file": "108_186_202_36_port5000_vesta_excerpt.html",
+    "uri": "http://108.186.202.36:5000/",
+    "source": "Censys HTTP response body pasted by user in conversation; key workflow manually transcribed, unrelated HTML omitted",
+    "source_kind": "manually_transcribed_code_excerpt",
+    "declared_censys_hash": null,
+    "original_complete_body_hash_metadata_only": "bee0a0f8b277d7436a7be9a2692e92a49f6e518461bea8e9814d17b58f66b062",
+    "observed_time": "Nov 12 2026 03:31 UTC",
+    "local_sha256": "7b4aefdebd7e07dc2602c9b8a11634b2a9e7d4afc58b8f0635e2b55bb6da4203",
+    "hash_matches": false,
+    "approx_bytes": 1178
+  }
+]

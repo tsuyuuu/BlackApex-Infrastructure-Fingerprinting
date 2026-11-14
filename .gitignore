@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+# Local reproduction outputs (archived baseline outputs live under results/)
+experiments/indicator_overlap/Component7_Offline_Evaluation_Results.json
+experiments/structural/detector_results.json
+experiments/structural/heldout_results.json
+# Never inadvertently commit full held-out body before review and intent to publish
+experiments/structural/heldout/*.html

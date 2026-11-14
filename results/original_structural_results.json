@@ -1,0 +1,234 @@
+{
+  "method": "Offline static-artifact equivalence + JavaScript source-feature extraction",
+  "scope": "Preserved/reconstructed/transcribed samples only; not a BlackApex classifier",
+  "sample_count": 12,
+  "cross_checks": [
+    {
+      "resource": "sitemap.xml",
+      "original_hash_verified": true,
+      "domain_occurrences_in_original": 1,
+      "reconstruction_matches_staged_bytes": true,
+      "single_substitution_matches_recorded_host_hash": true,
+      "calculated_configured_sha256": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+      "recorded_configured_sha256": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+      "normalized_template_matches": true
+    },
+    {
+      "resource": "robots.txt",
+      "original_hash_verified": true,
+      "domain_occurrences_in_original": 1,
+      "reconstruction_matches_staged_bytes": true,
+      "single_substitution_matches_recorded_host_hash": true,
+      "calculated_configured_sha256": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+      "recorded_configured_sha256": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+      "normalized_template_matches": true
+    }
+  ],
+  "workflow_smoke_tests": [
+    {
+      "file": "143_110_222_169_port5000_vesta_excerpt.html",
+      "expected_workflow_presence": true,
+      "observed": true,
+      "agrees": true
+    },
+    {
+      "file": "108_186_202_36_port5000_vesta_excerpt.html",
+      "expected_workflow_presence": true,
+      "observed": true,
+      "agrees": true
+    },
+    {
+      "file": "18_198_139_163_https443_moneyflex_login.html",
+      "expected_workflow_presence": false,
+      "observed": false,
+      "agrees": true
+    }
+  ],
+  "entries": [
+    {
+      "file": "108_186_202_36_port5000_vesta_excerpt.html",
+      "bytes": 1178,
+      "sha256": "7b4aefdebd7e07dc2602c9b8a11634b2a9e7d4afc58b8f0635e2b55bb6da4203",
+      "source_kind": "manually_transcribed_code_excerpt",
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": true,
+        "keyword_verifyturnstile": true,
+        "function_verifyturnstile_token": true,
+        "post_verify_turnstile": true,
+        "json_turnstile_token": true,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": true
+      }
+    },
+    {
+      "file": "140_150_232_108_reconstructed_robots.txt",
+      "bytes": 219,
+      "sha256": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+      "source_kind": "derived_hash_verified_reconstruction",
+      "declared_censys_hash": "3badb5b0b4ca9a261a19463465b3f4dad425820d00be40a0f4692ef0bfc4ea73",
+      "hash_matches_declared": true,
+      "artifact_kind": "robots.txt",
+      "normalized_sha256": "33a1734a97fe99a43e62d781223acf923167e92cd2a8c82ba0efc5c6a215227c"
+    },
+    {
+      "file": "140_150_232_108_reconstructed_sitemap.xml",
+      "bytes": 260,
+      "sha256": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+      "source_kind": "derived_hash_verified_reconstruction",
+      "declared_censys_hash": "84c27062a2361d21f0800e392603de3a687d155ab12891d1143d544f763f817e",
+      "hash_matches_declared": true,
+      "artifact_kind": "sitemap.xml",
+      "normalized_sha256": "4f5b2dfc8c201b45a91bb94cd5db67112d927fffa0e850adef53c4e6594be6b8"
+    },
+    {
+      "file": "143_110_222_169_port5000_vesta_excerpt.html",
+      "bytes": 1178,
+      "sha256": "a80deb90d6fa97ae0371ca462dd3b8cbd81a233c5d4794a4e4016a83dff61bec",
+      "source_kind": "manually_transcribed_code_excerpt",
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": true,
+        "keyword_verifyturnstile": true,
+        "function_verifyturnstile_token": true,
+        "post_verify_turnstile": true,
+        "json_turnstile_token": true,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": true
+      }
+    },
+    {
+      "file": "18_198_139_163_http80_root.html",
+      "bytes": 112,
+      "sha256": "33e61e737409b429cba4b7ae1d4352578a5fa1499b117cff68189951df96f62c",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+      "hash_matches_declared": false,
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": false,
+        "keyword_verifyturnstile": false,
+        "function_verifyturnstile_token": false,
+        "post_verify_turnstile": false,
+        "json_turnstile_token": false,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": false
+      }
+    },
+    {
+      "file": "18_198_139_163_https443_moneyflex_login.html",
+      "bytes": 21681,
+      "sha256": "b60d1d83fc727caaa4830ed73391df2506682fd9d0d36b6ac0e2b77ae1597251",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "2ae54cb649b57b7f31ce8d6d1d9354d4d182462d6bea81ea9cafa3d3bcf6f65b",
+      "hash_matches_declared": false,
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": true,
+        "keyword_verifyturnstile": true,
+        "function_verifyturnstile_token": false,
+        "post_verify_turnstile": false,
+        "json_turnstile_token": false,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": false
+      }
+    },
+    {
+      "file": "18_198_139_163_https443_root.html",
+      "bytes": 112,
+      "sha256": "33e61e737409b429cba4b7ae1d4352578a5fa1499b117cff68189951df96f62c",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+      "hash_matches_declared": false,
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": false,
+        "keyword_verifyturnstile": false,
+        "function_verifyturnstile_token": false,
+        "post_verify_turnstile": false,
+        "json_turnstile_token": false,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": false
+      }
+    },
+    {
+      "file": "192_166_82_111_https443_root.html",
+      "bytes": 65537,
+      "sha256": "2ece4f5b004f9b7ae33dfab8537b86f136a969e94d4b641205238b2c070ac46a",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "af682346e1c06941187ed7f3811d61e01cbc9d48d28771f4f94f410136002f2d",
+      "hash_matches_declared": false,
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": true,
+        "keyword_verifyturnstile": false,
+        "function_verifyturnstile_token": false,
+        "post_verify_turnstile": false,
+        "json_turnstile_token": false,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": false
+      }
+    },
+    {
+      "file": "192_166_82_111_https443_sitemap.xml",
+      "bytes": 273,
+      "sha256": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+      "hash_matches_declared": true,
+      "artifact_kind": "sitemap.xml",
+      "normalized_sha256": "4f5b2dfc8c201b45a91bb94cd5db67112d927fffa0e850adef53c4e6594be6b8"
+    },
+    {
+      "file": "192_166_82_111_port5000_robots.txt",
+      "bytes": 232,
+      "sha256": "831a8dec4cd5c41ec5f7cb61e9add4e547d564f207f75c053aee19f6f0cf6135",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "831a8dec4cd5c41ec5f7cb61e9add4e547d564f207f75c053aee19f6f0cf6135",
+      "hash_matches_declared": true,
+      "artifact_kind": "robots.txt",
+      "normalized_sha256": "33a1734a97fe99a43e62d781223acf923167e92cd2a8c82ba0efc5c6a215227c"
+    },
+    {
+      "file": "192_166_82_111_port5000_root.html",
+      "bytes": 65537,
+      "sha256": "2ece4f5b004f9b7ae33dfab8537b86f136a969e94d4b641205238b2c070ac46a",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "af682346e1c06941187ed7f3811d61e01cbc9d48d28771f4f94f410136002f2d",
+      "hash_matches_declared": false,
+      "artifact_kind": "html_or_js",
+      "features": {
+        "generic_turnstile": true,
+        "keyword_verifyturnstile": false,
+        "function_verifyturnstile_token": false,
+        "post_verify_turnstile": false,
+        "json_turnstile_token": false,
+        "landing_paths_api": false,
+        "server_redirect_keys": false,
+        "distinctive_verification_workflow": false
+      }
+    },
+    {
+      "file": "192_166_82_111_port5000_sitemap.xml",
+      "bytes": 273,
+      "sha256": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+      "source_kind": "transcribed_archive",
+      "declared_censys_hash": "5ec645bf49961d0f1b14e5ddc354e44df42b75b4451c19c6362e6a1d829a917f",
+      "hash_matches_declared": true,
+      "artifact_kind": "sitemap.xml",
+      "normalized_sha256": "4f5b2dfc8c201b45a91bb94cd5db67112d927fffa0e850adef53c4e6594be6b8"
+    }
+  ],
+  "caveats": [
+    "Reconstructed .108 static resources are DERIVED by applying a single documented hostname substitution to preserved, SHA-256-verified seed bytes; their calculated hashes match independently recorded Censys values. They are not original captured .108 response bytes.",
+    "Two vesta HTML samples are manually transcribed CLIENT-SIDE CODE EXCERPTS from user-supplied responses, not byte-for-byte archived full HTTP response bodies.",
+    "A source-feature match is not proof of maliciousness, common operator ownership, or device-code token acquisition.",
+    "The purposefully selected comparison sample does not support population-level false-positive rates."
+  ]
+}

@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>MoneyFlex</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="csrf-token" content="jjCEj6Tr2wT0DD21dzoc2ZjDxH54ftXjm18ilTBb" />
+
+    
+    <script type="text/javascript" nonce="Dc3cPyvu02Af855bwQjKKg==">
+        var turnstileSiteKey = null;
+        var turnstileWidgetId = null;
+
+        // Turnstile writes its token into a hidden <input name="cf-turnstile-response"> that it
+        // inserts INTO THE WIDGET CONTAINER by script. A script-inserted input is submitted
+        // (and seen by jQuery's serialize()) only when its form owner is #login_ddform: it must
+        // be a descendant of the form, or carry form="login_ddform". The markup now keeps both
+        // containers inside the form; the attribute is set as well so a later markup change
+        // cannot silently drop the token again (ML-731).
+        function bindTurnstileTokenToForm(containerSelector) {
+            var container = document.querySelector(containerSelector);
+            if (!container || !document.getElementById('login_ddform')) {
+                return;
+            }
+            var inputs = container.querySelectorAll('input[name="cf-turnstile-response"]');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].setAttribute('form', 'login_ddform');
+            }
+        }
+
+        function renderTurnstileInto(containerSelector) {
+            if (!document.querySelector(containerSelector)) {
+                return null;
+            }
+            var widgetId = turnstile.render(containerSelector, {
+                sitekey: turnstileSiteKey,
+                theme: 'light',
+                callback: function () {
+                    bindTurnstileTokenToForm(containerSelector);
+                }
+            });
+            bindTurnstileTokenToForm(containerSelector);
+            return widgetId;
+        }
+
+        function onTurnstileLoad() {
+            if (!turnstileSiteKey || !window.turnstile) {
+                return;
+            }
+            turnstileWidgetId = renderTurnstileInto('#turnstile-login');
+        }
+
+        // The OTP step draws a fresh widget: a Cloudflare token is single-use and the login
+        // step's token was spent on /getSenderalert (ML-596).
+        function turnstileForOtpStep() {
+            if (!turnstileSiteKey || !window.turnstile) {
+                return;
+            }
+            if (turnstileWidgetId !== null) {
+                turnstile.remove(turnstileWidgetId);
+            }
+            turnstileWidgetId = renderTurnstileInto('#turnstile-otp');
+        }
+    </script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://18.198.139.163/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Paper Dashboard core CSS -->
+    <link href="https://18.198.139.163/assets/css/paper-dashboard.css" rel="stylesheet">
+
+    <!-- CSS for Demo Purpose, don't include it in your project -->
+    <link href="https://18.198.139.163/assets/css/demo.css" rel="stylesheet">
+
+    <!-- Fonts and icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://18.198.139.163/assets/css/themify-icons.css" rel="stylesheet">
+
+    <style type="text/css">
+        .aglogo {
+            width: 34%;
+        }
+
+        .navbar-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar-brand {
+            padding: 0 !important;
+            /*margin: 0!important;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .full-page.login-page {
+            /*padding-top: 58px;*/
+        }
+
+        @media screen and (max-width: 600px) {
+            .aglogo {
+                width: 28%;
+                text-align: center;
+                margin: auto;
+            }
+
+            .navbar-brand {
+                padding: 0;
+                height: 0;
+                line-height: unset;
+                text-align: center;
+                margin: auto;
+            }
+
+            .full-page.login-page {
+                padding-top: 14px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://18.198.139.163">
+
+                    <img src="https://18.198.139.163/assets/logo.png" width="300" style="300px" /></a>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper wrapper-full-page">
+        <div class="full-page login-page" data-color=""
+            data-image="https://18.198.139.163/assets/img/background/background-2.jpg">
+            <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <!--<ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                            <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                        </ul>-->
+                        
+                                                    <form method="POST" action="https://18.198.139.163/web/mfm/login" id="login_ddform" class="admin">
+                                                    <input type="hidden" name="_token" value="jjCEj6Tr2wT0DD21dzoc2ZjDxH54ftXjm18ilTBb">                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                                        <div class="card" data-background="color" data-color="blue">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Login</h3>
+                                            </div>
+                                            <span id="error_message" role="alert"
+                                                style="color: red;text-align: center;display: block;">
+                                                                                            </span>
+                                            <div class="card-content">
+                                                <div class="form-group">
+                                                    <label>Email address</label>
+                                                    <input id="email" type="email"
+                                                        class="form-control "
+                                                        name="email" required autocomplete="email"
+                                                        autofocus>
+                                                                                                    </div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input id="password" type="password"
+                                                        class="form-control  input-no-border"
+                                                        name="password" required
+                                                        autocomplete="current-password">
+                                                                                                    </div>
+                                                                                            </div>
+                                            <div class="card-footer">
+                                                <a href="#" data-csp-call="getSenderalert" data-csp-pass-element
+                                                    class="btn btn-fill btn-wd"
+                                                    style="Width:100%;margin-bottom:10px"
+                                                    id="letsgobtn">Let's go</a>
+                                                                                                    <a class="forgot btn btn-fill btn-warning btn-wd"
+                                                        href="https://18.198.139.163/password/reset"
+                                                        style="Width:100%;margin-bottom:10px">Forgot Your Password?</a>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                                        <div class="card" data-background="color" data-color="blue">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Verify Code</h3>
+                                                <span style="color: #06b70a;" id="verify_message"></span>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="form-group">
+                                                    <label>Enter Code</label>
+                                                    
+                                                    <input id="verify_code" type="text"
+                                                        inputmode="numeric" pattern="[0-9]*"
+                                                        maxlength="6" autocomplete="one-time-code"
+                                                        class="form-control "
+                                                        name="verify_code" value="" required
+                                                        autofocus>
+                                                                                                    </div>
+                                                                                            </div>
+                                            <div class="card-footer">
+                                                <button type="submit" id="formsubbtn" data-csp-call="checkkeyvalue" data-csp-pass-event
+                                                    class="btn btn-fill btn-wd" style="Width:100%;margin-bottom:10px">Let's
+                                                    go</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer footer-transparent">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; 2026 MoneyFlex.</script>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<!-- Core JS Files. Extra: TouchPunch for touch library inside jquery-ui.min.js -->
+<script src="https://18.198.139.163/assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="https://18.198.139.163/assets/js/csp-events.js"></script>
+<script src="https://18.198.139.163/assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://18.198.139.163/assets/js/perfect-scrollbar.min.js" type="text/javascript"></script>
+<script src="https://18.198.139.163/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Forms Validations Plugin -->
+<script src="https://18.198.139.163/assets/js/jquery.validate.min.js"></script>
+
+<!-- Promise Library for SweetAlert2 working on IE -->
+<script src="https://18.198.139.163/assets/js/es6-promise-auto.min.js"></script>
+
+<!-- Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src="https://18.198.139.163/assets/js/moment.min.js"></script>
+
+<!-- Date Time Picker Plugin is included in this js file -->
+<script src="https://18.198.139.163/assets/js/bootstrap-datetimepicker.js"></script>
+
+<!-- Select Picker Plugin -->
+<script src="https://18.198.139.163/assets/js/bootstrap-selectpicker.js"></script>
+
+<!-- Switch and Tags Input Plugins -->
+<script src="https://18.198.139.163/assets/js/bootstrap-switch-tags.js"></script>
+
+<!-- Circle Percentage-chart -->
+<script src="https://18.198.139.163/assets/js/jquery.easypiechart.min.js"></script>
+
+<!-- Charts Plugin -->
+<script src="https://18.198.139.163/assets/js/chartist.min.js"></script>
+
+<!-- Notifications Plugin -->
+<script src="https://18.198.139.163/assets/js/bootstrap-notify.js"></script>
+
+<!-- Sweet Alert 2 plugin -->
+<script src="https://18.198.139.163/assets/js/sweetalert2.js"></script>
+
+<!-- Vector Map plugin -->
+<script src="https://18.198.139.163/assets/js/jquery-jvectormap.js"></script>
+
+<!-- Google Maps Plugin -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<!-- Wizard Plugin -->
+<script src="https://18.198.139.163/assets/js/jquery.bootstrap.wizard.min.js"></script>
+
+<!-- Bootstrap Table Plugin -->
+<script src="https://18.198.139.163/assets/js/bootstrap-table.js"></script>
+
+<!-- Plugin for DataTables.net -->
+<script src="https://18.198.139.163/assets/js/jquery.datatables.js"></script>
+
+<!-- Full Calendar Plugin -->
+<script src="https://18.198.139.163/assets/js/fullcalendar.min.js"></script>
+
+<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
+<script src="https://18.198.139.163/assets/js/paper-dashboard.js"></script>
+
+<!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
+<script src="https://18.198.139.163/assets/js/demo.js"></script>
+
+<script type="text/javascript" nonce="Dc3cPyvu02Af855bwQjKKg==">
+    // turnstileSiteKey, onTurnstileLoad() and turnstileForOtpStep() are defined in <head> (ML-731).
+
+    $().ready(function () {
+        demo.checkFullPageBackgroundImage();
+
+        setTimeout(function () {
+            // after 1000 ms we add the class animated to the login/register card
+            $('.card').removeClass('card-hidden');
+        }, 700);
+
+        // Route Enter-key / direct form submits through the AJAX (captcha-gated) flow.
+        // Only allow the real form POST after AJAX sets data-authorized="true".
+        $('#login_ddform').on('submit', function (e) {
+            if ($(this).data('authorized') !== true) {
+                e.preventDefault();
+                getSenderalert(this);
+                return false;
+            }
+        });
+    });
+
+
+
+    function handleAuthAjaxError(xhr, resetSelector) {
+        if (xhr.status === 422) {
+            var msg = (xhr.responseJSON && xhr.responseJSON.message) || '';
+            if (msg === 'captcha_missing' || msg === 'captcha_failed') {
+                window.location.reload();
+                return;
+            }
+        }
+        if (xhr.status === 429) {
+            var retry = parseInt(xhr.getResponseHeader('Retry-After') || '60', 10);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Too Many Attempts',
+                width: 400,
+                padding: '3em',
+                color: '#716add',
+                text: 'You have made too many attempts. Please wait ' + retry + ' seconds and try again.',
+            });
+        } else if (xhr.status >= 500) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Server Error',
+                width: 400,
+                padding: '3em',
+                color: '#716add',
+                text: 'Something went wrong. Please try again.',
+            });
+        } else if (xhr.status !== 0 && xhr.status !== 422) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                width: 400,
+                padding: '3em',
+                color: '#716add',
+                text: 'Request failed (' + xhr.status + '). Please try again.',
+            });
+        }
+        if (resetSelector) {
+            $(resetSelector).html("Let's go");
+        }
+    }
+
+    function getSenderalert(that) {
+
+        // A drawn widget means the server WILL demand a token (ML-600). Posting without one
+        // only earns a captcha_missing and a reload that wipes the form, so ask for the
+        // check to be completed instead -- the same gate the OTP step (checkkeyvalue) has.
+        if (turnstileSiteKey && !$('input[name="cf-turnstile-response"]').val()) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Verification required',
+                width: 400,
+                padding: '3em',
+                color: '#716add',
+                text: 'Please complete the security check below before continuing.',
+            });
+            return false;
+        }
+
+        $("#letsgobtn").html('<i class="fa fa-spinner fa-spin"></i> Loading');
+        $("#error_message").html('');
+
+        // ML-601: ONE /getSenderalert call. The page used to fire a quickResponse=1
+        // pre-flight and then a second call that actually sent the OTP, both carrying the
+        // same Turnstile token; the second only passed VerifyTurnstile via its 60-second,
+        // node-local replay cache, which fails on a multi-node deploy with CACHE_DRIVER=file.
+        // A single call spends the token once and sends the OTP once. (The console.log of the
+        // serialized form -- which included the password -- is removed with it.)
+        var formData = $("#login_ddform").serialize() + '&pathname=' + window.location.href;
+
+        $.ajax({
+            type: "POST",
+            url: "https://18.198.139.163/getSenderalert",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: formData,
+            success: function (data) {
+                if (data['status'] == true) {
+                    if (data['message'] == 'knownuser') {
+
+                        $("#login_ddform").data('authorized', true).submit();
+                        return true;
+                    }
+                    $("#home").removeClass('in active');
+                    $("#menu1").addClass('in active');
+                    $("#verify_message").html(data['message']);
+                    turnstileForOtpStep();
+
+                }
+                if (data['status'] == false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        width: 400,
+                        padding: '3em',
+                        color: '#716add',
+                        text: 'Incorrect Username or Password. Please Try Again.',
+                    })
+                    $("#menu1").removeClass('in active');
+                    $("#home").addClass('in active');
+                    $("#error_message").html(data['message']);
+                    $("#letsgobtn").html('Let\'s go');
+                    return false;
+                }
+            },
+            error: function (xhr) {
+                handleAuthAjaxError(xhr, '#letsgobtn');
+            }
+        });
+    }
+
+
+    function checkkeyvalue(e) {
+        e.preventDefault();
+
+        if (turnstileSiteKey && !$('input[name="cf-turnstile-response"]').val()) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Verification required',
+                width: 400,
+                padding: '3em',
+                color: '#716add',
+                text: 'Please complete the security check below before continuing.',
+            });
+            return false;
+        }
+
+        $("#formsubbtn").html('<i class="fa fa-spinner fa-spin"></i> Loading');
+
+        var formData = $("#login_ddform").serialize() + '&pathname=' + window.location.href;
+
+        $.ajax({
+            type: "POST",
+            url: "/checkOtpKey",
+            data: formData,
+            success: function (data) {
+                if (data['status'] == true) {
+                    $("#login_ddform").data('authorized', true).submit();
+                }
+                if (data['status'] == false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        width: 400,
+                        padding: '3em',
+                        color: '#716add',
+                        text: 'Incorrect Username or Password. Please Try Again.',
+                    })
+                    $("#verify_message").html(data['message']);
+                    $("#formsubbtn").html('Let\'s go');
+                }
+
+            },
+            error: function (xhr) {
+                handleAuthAjaxError(xhr, '#formsubbtn');
+            }
+        });
+
+    }
+
+</script>
+
+</html>

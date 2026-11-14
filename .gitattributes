@@ -1,0 +1,3 @@
+# Byte-level integrity: never normalize archived HTTP body files at Git checkout.
+experiments/structural/samples/** -text
+experiments/structural/heldout/*.html -text

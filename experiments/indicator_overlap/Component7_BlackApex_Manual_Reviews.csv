@@ -1,0 +1,7 @@
+ip,html_title,turnstile_integration,verifyTurnstile_function,post_to_verify_turnstile,json_turnstile_token,landing_paths_api,sitemap_hash_A,robots_hash_B,analyst_classification
+64.227.28.218,Human Check | vesta-io,Yes,Yes,Yes,Yes,No,Yes,Yes,reusable verification frontend candidate
+108.186.202.113,Human Check | vesta-io,Yes,Yes,Yes,Yes,No,Yes,Yes,reusable verification frontend candidate
+143.110.222.169,Human Check | vesta-io,Yes,Yes,Yes,Yes,No,Unknown,Unknown,reusable verification frontend candidate
+108.186.202.36,Human Check | vesta-io,Yes,Yes,Yes,Yes,No,Yes,Unknown,reusable verification frontend candidate
+140.150.232.108,Just a moment... | OneDrive,Yes,Yes,Yes,Yes,Yes,No,No,configurable verification frontend candidate
+18.198.139.163,MoneyFlex,Yes,No,No,No,No,Unknown,Unknown,"different application (comparison), not verified benign"

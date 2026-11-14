@@ -1,0 +1,114 @@
+{
+  "method": "offline limited validation of static templates and source features",
+  "static_reproduction": [
+    {
+      "resource": "sitemap.xml",
+      "source": "reconstructed candidate bytes, compared with independently reported Censys SHA-256",
+      "substitution_reproduces_candidate_hash": true,
+      "normalized_equal": true
+    },
+    {
+      "resource": "robots.txt",
+      "source": "reconstructed candidate bytes, compared with independently reported Censys SHA-256",
+      "substitution_reproduces_candidate_hash": true,
+      "normalized_equal": true
+    }
+  ],
+  "existing_transcript_checks": [
+    {
+      "name": "143_110_222_169_port5000_vesta_excerpt.html",
+      "source": "previously available transcript, NOT held-out labeled ground truth",
+      "vesta_rule": true,
+      "configurable_variant_features": {
+        "landing_paths_api": false,
+        "verification_post": true,
+        "token_field": true,
+        "redirect_keys": false,
+        "account_aware": false
+      },
+      "configurable_rule": false
+    },
+    {
+      "name": "108_186_202_36_port5000_vesta_excerpt.html",
+      "source": "previously available transcript, NOT held-out labeled ground truth",
+      "vesta_rule": true,
+      "configurable_variant_features": {
+        "landing_paths_api": false,
+        "verification_post": true,
+        "token_field": true,
+        "redirect_keys": false,
+        "account_aware": false
+      },
+      "configurable_rule": false
+    },
+    {
+      "name": "18_198_139_163_https443_moneyflex_login.html",
+      "source": "previously available transcript, NOT held-out labeled ground truth",
+      "vesta_rule": false,
+      "configurable_variant_features": {
+        "landing_paths_api": false,
+        "verification_post": false,
+        "token_field": false,
+        "redirect_keys": false,
+        "account_aware": true
+      },
+      "configurable_rule": false
+    },
+    {
+      "name": "192_166_82_111_https443_root.html",
+      "source": "previously available transcript, NOT held-out labeled ground truth",
+      "vesta_rule": false,
+      "configurable_variant_features": {
+        "landing_paths_api": false,
+        "verification_post": false,
+        "token_field": false,
+        "redirect_keys": false,
+        "account_aware": false
+      },
+      "configurable_rule": false
+    }
+  ],
+  "synthetic_robustness_controls": [
+    {
+      "name": "just_the_keyword",
+      "features": {
+        "landing_paths_api": false,
+        "verification_post": false,
+        "token_field": false,
+        "redirect_keys": false,
+        "account_aware": false
+      },
+      "configurable_rule": false,
+      "synthetic": true
+    },
+    {
+      "name": "comment_only_endpoint",
+      "features": {
+        "landing_paths_api": true,
+        "verification_post": false,
+        "token_field": true,
+        "redirect_keys": true,
+        "account_aware": true
+      },
+      "configurable_rule": false,
+      "synthetic": true
+    },
+    {
+      "name": "minimal_configurable_fixture",
+      "features": {
+        "landing_paths_api": true,
+        "verification_post": true,
+        "token_field": true,
+        "redirect_keys": true,
+        "account_aware": true
+      },
+      "configurable_rule": true,
+      "synthetic": true
+    }
+  ],
+  "heldout_onedrive_root": {
+    "status": "NOT_TESTED",
+    "reason": "Archived full OneDrive-themed root HTML not present; no invented/transcribed proxy used."
+  },
+  "interpretation": "Zero population-level performance claims. Synthetic controls do not measure false-positive rates. Static reconstruction was previously examined and is not independent holdout evidence."
+}
